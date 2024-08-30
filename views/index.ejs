@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+    <link rel="stylesheet" href="/css/styles.css">
+</head>
+<body>
+    <header>
+        <h1>Ease Store</h1>
+        <nav>
+            <ul>
+                <li><a href="/">Home</a></li>
+                <li><a href="/products">Products</a></li>
+                <li><a href="/contact">Contact</a></li>
+                <% if (user) { %>
+                    <li><a href="/cart">Cart</a></li>
+                    <li><a href="/logout">Logout</a></li>
+                <% } else { %>
+                    <li><a href="/auth/google">Login</a></li>
+                <% } %>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <h2>Featured Products</h2>
+        <div class="product-list">
+            <% products.forEach(product => { %>
+                <div class="product-card">
+                    <img src="/images/<%= product.image %>" alt="<%= product.name %>">
+                    <h3><%= product.name %></h3>
+                    <p>Price: $<%= product.price %></p>
+                    <a href="/product/<%= product.id %>">View Details</a>
+                </div>
+            <% }); %>
+        </div>
+    </main>
+</body>
+</html>

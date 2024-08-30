@@ -1,0 +1,23 @@
+[
+    {
+        "id": 1,
+        "name": "Basic T-Shirt",
+        "description": "Comfortable cotton t-shirt available in various colors.",
+        "price": 19.99,
+        "image": "Basic_t shirt.jpg"
+    },
+    {
+        "id": 2,
+        "name": "Denim Jeans",
+        "description": "Stylish denim jeans with a modern fit.",
+        "price": 49.99,
+        "image": "jeans.jpg"
+    },
+    {
+        "id": 3,
+        "name": "Sneakers",
+        "description": "Casual sneakers perfect for everyday wear.",
+        "price": 69.99,
+        "image": "sneakers.jpg"
+    }
+]

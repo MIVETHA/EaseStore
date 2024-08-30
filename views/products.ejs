@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Products - ShopEase</title>
+    <link rel="stylesheet" href="/css/styles.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">ShopEase</div>
+            <ul>
+                <li><a href="/">Home</a></li>
+                <li><a href="/products">Products</a></li>
+                <li><a href="/contact">Contact</a></li>
+                <% if (user) { %>
+                    <li><a href="/cart">Cart</a></li>
+                    <li><a href="/logout">Logout</a></li>
+                <% } else { %>
+                    <li><a href="/login">Login</a></li>
+                <% } %>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <h1>All Products</h1>
+        <div class="product-list">
+            <% products.forEach(product => { %>
+                <div class="product-card">
+                    <img src="/images/<%= product.image %>" alt="<%= product.name %>">
+                    <h3><%= product.name %></h3>
+                    <p>Price: $<%= product.price %></p>
+                    <a href="/product/<%= product.id %>">View Details</a>
+                </div>
+            <% }); %>
+        </div>
+    </main>
+    <footer>
+        <p>&copy; 2024 ShopEase</p>
+    </footer>
+</body>
+</html>

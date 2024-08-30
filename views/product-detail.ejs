@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><%= product.name %></title>
+    <link rel="stylesheet" href="/css/styles.css">
+</head>
+<body>
+    <header>
+        <h1>Product Details</h1>
+        <nav>
+            <ul>
+                <li><a href="/">Home</a></li>
+                <li><a href="/products">Products</a></li>
+                <li><a href="/contact">Contact</a></li>
+                <% if (user) { %>
+                    <li><a href="/cart">Cart</a></li>
+                    <li><a href="/logout">Logout</a></li>
+                <% } else { %>
+                    <li><a href="/auth/google">Login with Google</a></li>
+                <% } %>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <h2><%= product.name %></h2>
+        <img src="/images/<%= product.image %>" alt="<%= product.name %>">
+        <p>Price: $<%= product.price %></p>
+        <form action="/cart/add/<%= product.id %>" method="POST">
+            <button type="submit">Add to Cart</button>
+        </form>
+    </main>
+</body>
+</html>
