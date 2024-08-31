@@ -11,7 +11,7 @@ const app = express();
 passport.use(new GoogleStrategy({
     clientID: process.env.GOOGLE_CLIENT_ID,
     clientSecret: process.env.GOOGLE_CLIENT_SECRET,
-    callbackURL: "/auth/google/callback"
+    callbackURL: "http://localhost:3005/auth/google/callback"
 }, (accessToken, refreshToken, profile, done) => {
     // Save user info to the session
     // Example User model usage (adjust as needed)
